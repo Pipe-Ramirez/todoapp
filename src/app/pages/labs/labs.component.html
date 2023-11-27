@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>{{title()}} Felipe</h1>
+    <ul>
+        @for (elem of task; track elem) {
+        <li>{{elem}}</li>
+        }
+    </ul>
+    <hr />
+    <p> Hola mi nombre es {{person.name}} y mi tengo {{person.age}} años de edad.</p>
+    <img [src]="person.img" alt="">
+    <hr />
+    <p>Change</p>
+    <input type="text" (change)="changeInput($event)">
+    <hr />
+    <p>keydown</p>
+    <input type="text" (keydown)="pressKey($event)">
+    <!-- (keydown.enter) // Para evaluar una tecla especifica-->
+    <button (click)="btnAction()">Aceptar</button>
+    <hr />
+    <input type="color" [formControl]="colorCtrol">
+    <p>{{colorCtrol.value}}</p>
+    <svg>
+        <g>
+            <rect x="0" y="0" height="100" width="100" [attr.fill]="colorCtrol.value"> </rect>
+        </g>
+    </svg>
+    <hr />
+    <input type="range" [formControl]="widthCtrol" [title]="widthCtrol.value">
+    <span class="box" [style.width.px]="widthCtrol.value"></span>
+    <hr />
+    <p>
+        <input type="text" [formControl]="nameCtrol">
+        <span class="message-error" [class.show]="nameCtrol.invalid && nameCtrol.touched">Campo obligatorio</span>
+    </p>
+</div>

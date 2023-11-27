@@ -10,5 +10,8 @@ import { RouterOutlet } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todoapp';
+  title = 'Bienvenido';
+  task=[
+    'Diseño de Base de datos', 'Crear base de datos','Diseño de App'
+  ]
 }
